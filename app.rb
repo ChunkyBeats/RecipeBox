@@ -3,8 +3,14 @@ Bundler.require(:default, :production)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
-  @recipes = Recipe.all.order(rating: :desc)
+  @recipes = Recipe.all.order(title: :desc)
+  @categories = Category.all
   erb(:index)
+end
+
+get('/view_recipes') do
+  @recipes = Recipe.all.order(rating: :desc)
+  erb(:recipes_all)
 end
 
 get('/recipes') do

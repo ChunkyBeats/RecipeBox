@@ -1,15 +1,17 @@
-<h2>Add a Category</h2>
+<h2>All of your categories:</h2>
+<ul>
+  <% @all_categories.each do |c|%>
+    <li><a href="/category/<%= c.id %>"><%=c.name%></li>
+  <%end%>
+</ul>
+
+<br>
+
+<h4>Add a Category</h4>
 
 <form action="/categories" method="post">
   <label for="category">Category Name</label>
     <input name="category" id="category" type="text">
     <button type="submit" class="btn btn-warning">Add a Category</button>
 </form>
-
-
-<h3>All of your categories:</h3>
-<ul>
-  <% @all_categories.each do |c|%>
-    <li><a href="/category/<%= c.id %>"><%=c.name%></li>
-  <%end%>
-</ul>
+<br>

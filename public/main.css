@@ -1,0 +1,10 @@
+
+.up_del_buttons form,
+.up_del_buttons form div {
+    display: inline;
+}
+
+.up_del_buttons button {
+    display: inline;
+    vertical-align: middle;
+}

@@ -22,12 +22,19 @@
               <% end %>
 
     </ul>
+    <div class="up_del_buttons">
+      <form action="/recipe/:id/update" method="get">
+        <input name="update" type="hidden" value="patch">
+        <input name="update" type="hidden" value="<%= @recipe.id %>">
+        <button type="submit" class="btn btn-warning">Update Recipe</button>
+      </form>
 
-    <form action="/" method="post">
-    <input name="_method" type="hidden" value="delete">
-    <input name="id" type="hidden" value="<%=@recipe.id%>">
-    <button type="submit" class="btn btn-danger">Delete Recipe</button>
-    </form>
+      <form action="/" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <input name="id" type="hidden" value="<%=@recipe.id%>">
+        <button type="submit" class="btn btn-danger">Delete Recipe</button>
+      </form>
+    </div>
   </div>
 
 
@@ -60,7 +67,7 @@
 
 
   <div class="form-group">
-    <h4>Add Recipe Ingredients</h4>
+    <h4>Update Recipe Ingredients</h4>
     <textarea name="ingredients" type="text" rows="10" cols="60"></textarea>
   </div>
 
